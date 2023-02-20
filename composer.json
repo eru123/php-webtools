@@ -1,0 +1,22 @@
+{
+    "name": "eru123/webtools",
+    "description": "A PHP Microservice and a Library of collection of web tools",
+    "type": "library",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "eru123\\webtools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eru123",
+            "email": "39824083+eru123@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "eru123/router": "0.1.0",
+        "amphp/parallel": "^2.0"
+    }
+}
