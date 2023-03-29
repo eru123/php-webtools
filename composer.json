@@ -16,7 +16,6 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "eru123/router": "0.1.0",
-        "amphp/parallel": "^2.0"
+        "eru123/router": "0.2.1"
     }
 }

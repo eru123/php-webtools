@@ -6,6 +6,7 @@ A PHP Microservice and a Library of collection of web tools
  - Composer
  - Apache2
  - net-tools
+ - whois
  - Linux (Debian-based distro)
 
 # Setup
