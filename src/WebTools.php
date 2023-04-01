@@ -8,23 +8,19 @@ use Exception;
 
 class WebTools
 {
-    public static function use_route()
+    public static function build()
     {
         $r = new Router();
         $r->response([Builtin::class, 'response']);
         $r->error([Builtin::class, 'error']);
 
-        $r->post('/api/v1/webtools/dnslookup', [static::class, 'dnslookup']);
-        $r->post('/api/v1/webtools/whoislookup', [static::class, 'whoislookup']);
-        $r->post('/api/v1/webtools/ping', [static::class, 'ping']);
-        $r->post('/api/v1/webtools/traceroute', [static::class, 'traceroute']);
-        $r->post('/api/v1/webtools/headers', [static::class, 'headers']);
-        
-        return $r->fallback('/', function ($s) {
-            return [
-                'error' => 'Route Not Found',
-            ];
-        });
+        $r->post('/dnslookup', [static::class, 'dnslookup']);
+        $r->post('/whoislookup', [static::class, 'whoislookup']);
+        $r->post('/ping', [static::class, 'ping']);
+        $r->post('/traceroute', [static::class, 'traceroute']);
+        $r->post('/headers', [static::class, 'headers']);
+
+        return $r;
     }
 
     public static function dnslookup()
@@ -40,10 +36,13 @@ class WebTools
             'TXT' => DNS_TXT,
             'SRV' => DNS_SRV,
             'NAPTR' => DNS_NAPTR,
-            'A6' => DNS_A6,
-            'HINFO' => DNS_HINFO,
-            'CAA' => DNS_CAA
         ];
+        
+        if (strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
+            $methods_list['A6'] = DNS_A6;
+            $methods_list['HINFO'] = DNS_HINFO;
+            $methods_list['CAA'] = DNS_CAA;
+        }
 
         $body = Helper::request_body();
         $data = Helper::schema_validator($body, [
@@ -135,7 +134,7 @@ class WebTools
             'ip' => [
                 'type' => 'string',
                 'required' => true,
-                'alias' => 'Domain',
+                'alias' => 'IP',
                 'regex' => $ip_rgx,
             ],
         ]);

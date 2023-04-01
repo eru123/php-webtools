@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "540d9caf672d252e9110d59257624076",
+    "content-hash": "d40dda644ede103e063e28c88033320a",
     "packages": [
         {
             "name": "eru123/router",
-            "version": "0.2.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eru123/php-router.git",
-                "reference": "0f0b0f646610522c2661378d29d2c14d6eb6caf4"
+                "reference": "fa52aabc90d47305d2829c69f20db32f8502c0f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eru123/php-router/zipball/0f0b0f646610522c2661378d29d2c14d6eb6caf4",
-                "reference": "0f0b0f646610522c2661378d29d2c14d6eb6caf4",
+                "url": "https://api.github.com/repos/eru123/php-router/zipball/fa52aabc90d47305d2829c69f20db32f8502c0f7",
+                "reference": "fa52aabc90d47305d2829c69f20db32f8502c0f7",
                 "shasum": ""
             },
             "type": "library",
@@ -39,9 +39,9 @@
             "description": "A PHP Library for handling Routes using a Parent-Child Model",
             "support": {
                 "issues": "https://github.com/eru123/php-router/issues",
-                "source": "https://github.com/eru123/php-router/tree/0.2.1"
+                "source": "https://github.com/eru123/php-router/tree/0.3.2"
             },
-            "time": "2023-03-29T09:21:10+00:00"
+            "time": "2023-03-31T17:23:36+00:00"
         }
     ],
     "packages-dev": [],
@@ -52,5 +52,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
